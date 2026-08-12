@@ -1,0 +1,20 @@
+{
+  "name": "@niuma/shared",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.type-tests.json",
+    "test": "node --import tsx src/ai-employee-lifecycle.test.ts && node --import tsx src/employee-messages.test.ts && node --import tsx src/employee-profile.test.ts && node --import tsx src/protocol.test.ts && node --import tsx src/proxy/proxy-spec.test.ts && node --import tsx src/proxy-module/proxy-module-spec.test.ts && node --import tsx src/routine/spec-validator.test.ts && node --import tsx src/runtime-session-scope.test.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsx": "^4.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
