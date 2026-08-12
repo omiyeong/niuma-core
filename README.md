@@ -1,13 +1,41 @@
+<div align="center">
+<img src="docs/images/logo.png" alt="NiuMa" width="96" />
+
 # niuma-core
 
-> 把形态各异的 AI Agent CLI，统一成可被平台编排的执行后端。
+<p align="center">
+  <em>把形态各异的 AI Agent CLI，统一成可被平台编排的执行后端。</em><br />
+  <sub>One orchestration contract for heterogeneous AI agent runtimes.</sub>
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6.svg)](https://www.typescriptlang.org/)
-[![Node](https://img.shields.io/badge/Node-%E2%89%A520-339933.svg)](https://nodejs.org/)
-[![Tests](https://img.shields.io/badge/tests-passing-success.svg)](#运行测试)
+**AI员工平台 NiuMa 的运行时内核层**
 
-*Runtime abstraction layer that unifies heterogeneous AI agent CLIs (Claude Code, Codex, AutoClaw) behind a single orchestration contract. Extracted from NiuMa, an AI-employee platform.*
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node](https://img.shields.io/badge/Node-%E2%89%A520-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Runtime](https://img.shields.io/badge/Runtime-Codex%20%C2%B7%20Claude%20Code%20%C2%B7%20AutoClaw-101416?style=flat-square)](#为什么需要这一层)
+
+[设计站点 (Site)](https://omiyeong.github.io) · [核心抽象 (Adapter)](packages/agent-runtime-core/src/adapter.ts) · [设计文档 (Specs)](docs/specs)
+
+</div>
+
+---
+
+<div align="center">
+  <img src="docs/images/channel.png" alt="NiuMa workspace" width="100%" />
+  <br />
+  <sub>AI员工以团队成员身份在 Channel 中协作，每条发言标注驱动它的 runtime</sub>
+</div>
+
+<br />
+
+<div align="center">
+  <img src="docs/images/employee.png" alt="AI employee profile" width="100%" />
+  <br />
+  <sub>每个 AI员工有独立的岗位规则、runtime 配置、工作区与长期记忆</sub>
+</div>
+
+---
 
 `niuma-core` 是 AI员工平台 NiuMa 的运行时内核层，解决一个具体问题：Claude Code、Codex CLI、AutoClaw 这类 agent runtime 各有各的进程模型、传输协议和会话语义，平台一旦直接耦合其中任何一个，就会被它锁死。
 
